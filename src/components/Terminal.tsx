@@ -7,21 +7,15 @@ type Line = {
 
 const script: Line[] = [
   { text: 'whoami', kind: 'cmd' },
-  { text: 'alex_mercer — software engineer', kind: 'out' },
+  { text: 'H T Chethan — AI & ML Developer', kind: 'out' },
   { text: '', kind: 'dim' },
-  { text: 'cat stack.config', kind: 'cmd' },
-  { text: '› languages: TypeScript, Rust, Go', kind: 'out' },
-  { text: '› frontend:  React, Next.js, WebGL', kind: 'out' },
-  { text: '› backend:   Node, Postgres, Edge', kind: 'out' },
-  { text: '✓ configuration loaded', kind: 'ok' },
-  { text: '', kind: 'dim' },
-  { text: 'status --current', kind: 'cmd' },
-  { text: '› available for select engagements', kind: 'out' },
-  { text: '› shipping from Berlin / remote', kind: 'out' },
-  { text: '', kind: 'dim' },
-  { text: './run --portfolio', kind: 'cmd' },
-  { text: '› initializing interface...', kind: 'dim' },
-  { text: '✓ connection established', kind: 'ok' },
+  { text: 'tech_stack', kind: 'cmd' },
+  { text: '> Languages: Python, JavaScript, TypeScript', kind: 'out' },
+  { text: '> Frontend: React, Next.js, Tailwind CSS', kind: 'out' },
+  { text: '> Backend: Flask, Node.js, Express', kind: 'out' },
+  { text: '> AI/ML: RAG, LLMs, LangChain, ChromaDB', kind: 'out' },
+  { text: '> Tools: Docker, Git, GitHub, Redis', kind: 'out' },
+  { text: '> Cloud: AWS, Vercel, Render', kind: 'out' },
 ];
 
 export default function Terminal() {
@@ -100,14 +94,14 @@ export default function Terminal() {
           <span className="h-2.5 w-2.5 rounded-full border border-neon-400/30" />
           <span className="h-2.5 w-2.5 rounded-full border border-neon-400/40" />
           <span className="ml-3 font-mono text-[11px] tracking-wide text-gray-500">
-            alex@mercer: <span className="text-neon-300/80">~</span>/portfolio
+            chethan@portfolio: <span className="text-neon-300/80">~</span>
           </span>
         </div>
 
         {/* Body */}
         <div
           ref={containerRef}
-          className="h-[300px] overflow-y-auto scrollbar-hidden px-5 py-4 font-mono text-[13px] leading-relaxed"
+          className="h-[300px] overflow-y-auto scrollbar-hidden px-5 py-4 font-mono text-[13px] leading-[1.45] sm:leading-relaxed"
         >
           {visibleLines.map((line, i) => (
             <LineRow key={i} line={line} />
@@ -134,7 +128,7 @@ export default function Terminal() {
 function Prompt() {
   return (
     <span className="mr-2 select-none text-neon-400">
-      <span className="text-neon-300">alex@mercer</span>
+      <span className="text-neon-300">chethan@portfolio</span>
       <span className="text-gray-600">:</span>
       <span className="text-neon-200">~</span>
       <span className="text-gray-600">$</span>

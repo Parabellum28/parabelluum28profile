@@ -7,44 +7,58 @@ type Project = {
   description: string;
   tags: string[];
   year: string;
+  links: ProjectLink[];
+};
+
+type ProjectLink = {
+  label: string;
+  url: string;
 };
 
 const projects: Project[] = [
   {
     id: '01',
-    name: 'Lumen OS',
-    italic: 'distributed runtime',
+    name: 'PaperPilot— Stateful arXiv Research Digest & Grounded QA Agent ',
+    italic: 'RAG pipeline using semantic embeddings',
     description:
-      'A lightweight <edge runtime> for globally distributed applications with sub-millisecond cold starts.',
-    tags: ['Rust', 'WASM', 'Edge'],
-    year: '2025',
+      ' A stateful research assistant that searches arXiv, retrieves and parses paper PDFs, and generates structured research digests.',
+    tags: ['RAG', 'query routing', 'chunking'],
+    year: 'Sept 2026',
+    links: [{ label: 'GitHub Repository', url: 'https://github.com/Parabellum28/Autonomous-arXiv-Paper-Digest-QA-Agent' }],
   },
   {
     id: '02',
-    name: 'Halcyon',
-    italic: 'design system',
+    name: 'Risk Appetite Framework ',
+    italic: 'RAG Based Project',
     description:
-      'A <component architecture> and token system powering twenty internal products at scale.',
-    tags: ['TypeScript', 'React', 'Tokens'],
-    year: '2025',
+      'An AI automated Retrieval-Augmented Generation (RAG) system using Python, Flask REST APIs, LangChain, Groq Llama 3.3-70B, ChromaDB, Sentence Transformers, Redis, and Docker for semantic search and context-aware response generation.',
+    tags: ['LangChain', 'Sentence Transformers', 'Docker', 'Redis', 'ChromaDB'],
+    year: 'May 2026',
+    links: [{ label: 'GitHub Repository', url: 'https://github.com/Parabellum28/Risk-Appetite-Framework' }],
   },
   {
     id: '03',
-    name: 'Meridian',
-    italic: 'data canvas',
+    name: 'DevOps Deployment Pipeline for Flask API',
+    italic: 'AWS CI/CD Automation Based Project',
     description:
-      'Real-time <visualization engine> rendering millions of points with WebGL and streaming data.',
-    tags: ['WebGL', 'Canvas', 'Streams'],
-    year: '2024',
+      ' deployed a containerized Flask REST API on AWS EC2, using Docker for application isolation and Nginx as a reverse proxy for production HTTP traffic.',
+    tags: ['AWS', 'Docker', 'Nginx', 'Flask', 'CI/CD'],
+    year: 'Sept 2026',
+    links: [{ label: 'GitHub Repository', url: 'https://github.com/Parabellum28/DevOps-Deployment-Pipeline-for-Flask-API' }],
   },
   {
     id: '04',
-    name: 'Quartz',
-    italic: 'auth gateway',
+    name: 'Freelance Projects',
+    italic: 'Under Contract',
     description:
-      'A <zero-trust authentication> layer handling ten million sessions across regulated markets.',
-    tags: ['Go', 'OAuth', 'Security'],
+      'Developed, deployed, and maintained production-ready web applications and backend services using Python, JavaScript/ TypeScript, React, Node.js, Flask, REST APIs, and Docker.',
+    tags: ['REVA BAKERY MACHINERY', 'THROTTLE & THEORY AVIATION', 'FANTACIAN LABS'],
     year: '2024',
+    links: [
+      { label: 'REVA BAKERY MACHINERY — Visit Live Website', url: 'https://www.revabakerymachinery.com' },
+      { label: 'THROTTLE & THEORY AVIATION — Visit Live Website', url: 'https://www.throttleandtheoryaviation.com' },
+      { label: 'FANTACIAN LABS — Visit Live Website', url: 'https://www.fantacianlabs.com' },
+    ],
   },
 ];
 
@@ -65,7 +79,7 @@ export default function Work() {
   return (
     <section id="work" className="relative w-full py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <SectionHeading index="01" title="Selected Work" italic="projects" />
+        <SectionHeading index="01" title="" italic="Projects" />
 
         <div className="mt-16 grid gap-px border border-neon-400/15 bg-neon-400/10 sm:grid-cols-2">
           {projects.map((p, i) => (
@@ -102,9 +116,39 @@ export default function Work() {
                 ))}
               </div>
 
-              <div className="relative mt-7 flex items-center gap-1.5 font-serif text-sm text-gray-500 transition-colors duration-300 group-hover:text-neon-100">
-                <span className="italic">View case study</span>
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <div className="relative mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+                {p.links.map(({ label, url }) => {
+                  const isPlaceholder = url.startsWith('#ADD_');
+                  const content = (
+                    <>
+                      <span className="italic">{label}</span>
+                      {isPlaceholder && <span className="font-mono text-[10px] text-gray-500"></span>}
+                      <ArrowUpRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </>
+                  );
+
+                  return isPlaceholder ? (
+                    <span
+                      key={`${label}-${url}`}
+                      aria-disabled="true"
+                      title={`Replace ${url} with the destination URL in the project data`}
+                      className="inline-flex items-center gap-1.5 font-serif text-sm text-neon-200/60"
+                    >
+                      {content}
+                    </span>
+                  ) : (
+                    <a
+                      key={label}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${label} (opens in new tab)`}
+                      className="inline-flex items-center gap-1.5 font-serif text-sm text-neon-200 transition-colors duration-300 hover:text-neon-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-neon-300"
+                    >
+                      {content}
+                    </a>
+                  );
+                })}
               </div>
             </article>
           ))}

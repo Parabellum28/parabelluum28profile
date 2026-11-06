@@ -27,10 +27,10 @@ export default function Navigation() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
         <a href="#top" className="group flex items-center gap-2.5">
           <span className="flex h-8 w-8 items-center justify-center border border-neon-400/40 text-neon-200 text-sm tracking-tighter transition-all duration-300 group-hover:border-neon-400/80 group-hover:shadow-[0_0_16px_rgba(10,132,255,0.4)]">
-            <span className="font-serif italic text-neon-100">a</span>
+            <span className="font-serif italic text-neon-100">h</span>
           </span>
           <span className="font-serif text-sm tracking-[0.2em] text-gray-300 transition-colors duration-300 group-hover:text-neon-100">
-            ALEX<span className="text-neon-300">.</span>MERCER
+            H T<span className="text-neon-300">.</span>CHETHAN
           </span>
         </a>
 

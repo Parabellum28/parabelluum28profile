@@ -12,12 +12,6 @@ export default function Hero() {
       <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center gap-12 px-6 pt-24 pb-16 md:px-10 lg:flex-row lg:items-center lg:gap-8">
         {/* Left — editorial intro */}
         <div className="flex-1 lg:pr-8">
-          <div className="animate-fade-up-sm" style={{ opacity: 0 }}>
-            <span className="font-mono text-xs tracking-[0.3em] text-neon-300/70 uppercase">
-              <span className="text-gray-600">[</span> portfolio · 2026 <span className="text-gray-600">]</span>
-            </span>
-          </div>
-
           <h1
             className="mt-7 font-serif text-[2.6rem] leading-[1.12] tracking-tight text-gray-100 animate-fade-up sm:text-5xl lg:text-6xl"
             style={{ opacity: 0, animationDelay: '0.1s' }}
@@ -33,7 +27,7 @@ export default function Hero() {
             className="mt-8 max-w-md font-serif text-lg leading-relaxed text-gray-400 animate-fade-up"
             style={{ opacity: 0, animationDelay: '0.25s' }}
           >
-            I&apos;m <span className="italic text-gray-200">Alex Mercer</span>, a software engineer focused on
+            I&apos;m <span className="italic text-gray-200">H T Chethan</span>, an AI &amp; ML Developer focused on
             <span className="italic text-neon-200"> performance</span>, thoughtful architecture, and
             <span className="italic text-neon-200"> detail</span>-obsessed design.
           </p>
@@ -42,13 +36,7 @@ export default function Hero() {
             className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up"
             style={{ opacity: 0, animationDelay: '0.4s' }}
           >
-            <a
-              href="#work"
-              className="group inline-flex items-center gap-2 border border-neon-400/30 px-6 py-3 font-serif text-sm tracking-wide text-neon-100 transition-all duration-300 hover:border-neon-400/70 hover:bg-neon-500/5 hover:border-glow-strong"
-            >
-              View selected work
-              <ArrowDownRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
-            </a>
+
             <a
               href="#contact"
               className="group inline-flex items-center gap-2 font-serif text-sm tracking-wide text-gray-400 transition-colors duration-300 hover:text-neon-100"

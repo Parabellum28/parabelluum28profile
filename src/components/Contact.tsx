@@ -2,9 +2,9 @@ import { ArrowUpRight } from 'lucide-react';
 import { SectionHeading } from './Work';
 
 const channels = [
-  { label: 'Email', value: 'alex@mercer.dev', href: 'mailto:alex@mercer.dev' },
-  { label: 'GitHub', value: 'github.com/alexmercer', href: '#' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/alexmercer', href: '#' },
+  { label: 'Email', value: 'h.t.chethan03@gmail.com', href: 'mailto:h.t.chethan03@gmail.com' },
+  { label: 'GitHub', value: 'https://github.com/Parabellum28', href: 'https://github.com/Parabellum28', external: true },
+  { label: 'LinkedIn', value: 'https://www.linkedin.com/in/htchethan28/', href: 'https://www.linkedin.com/in/htchethan28/', external: true },
 ];
 
 export default function Contact() {
@@ -44,6 +44,8 @@ export default function Contact() {
                 <li key={c.label} className="border-b border-neon-400/10 last:border-b-0">
                   <a
                     href={c.href}
+                    target={c.external ? '_blank' : undefined}
+                    rel={c.external ? 'noopener noreferrer' : undefined}
                     className="group flex items-center justify-between px-5 py-5 transition-all duration-300 hover:bg-neon-500/5"
                   >
                     <div>
