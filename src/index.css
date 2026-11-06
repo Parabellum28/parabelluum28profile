@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #04070f;
+    color: #c7d2e4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background-color: rgba(10, 132, 255, 0.3);
+    color: #e6f6ff;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 18px rgba(10, 132, 255, 0.45), 0 0 40px rgba(10, 132, 255, 0.15);
+  }
+  .border-glow {
+    box-shadow: 0 0 0 1px rgba(56, 168, 255, 0.18), 0 0 24px rgba(10, 132, 255, 0.08);
+  }
+  .border-glow-strong {
+    box-shadow: 0 0 0 1px rgba(56, 168, 255, 0.35), 0 0 30px rgba(10, 132, 255, 0.14);
+  }
+  .ambient-glow {
+    background: radial-gradient(ellipse at center, rgba(10, 132, 255, 0.18) 0%, rgba(10, 132, 255, 0.05) 40%, transparent 70%);
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(56, 168, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56, 168, 255, 0.035) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .vignette {
+    background: radial-gradient(ellipse at 50% 0%, transparent 0%, transparent 60%, rgba(4, 7, 15, 0.85) 100%);
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #04070f;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(10, 132, 255, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(10, 132, 255, 0.45);
+}
